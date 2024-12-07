@@ -7,13 +7,12 @@ import auth_facebook from "../images/auth_facebook.svg";
 import auth_yandex from "../images/auth_yandex.svg";
 import auth_lock from "../images/auth_lock.svg";
 import { Context } from "../index.js";
+import { Link } from "react-router-dom";
 
 function AuthForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const { store } = useContext(Context);
-
-
 
     return(
         <div className="auth">
@@ -52,7 +51,13 @@ function AuthForm() {
                         />
                     </form>
 
-                    <button className="login-but" onClick={() => store.login(username, password)}>Войти</button>
+                    <Link to={"/"}>
+                        <button 
+                            className="login-but" 
+                            onClick={() => store.login(username, password)}>
+                            Войти
+                        </button>
+                    </Link>
 
                     <a className="auth-recover" href="#">Восстановить пароль</a>
 
