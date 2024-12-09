@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import AuthService from '../services/AuthService.js';
 
-export default class Store {
+class Store {
     isAuth = false;
     isLoading = false;
 
@@ -50,4 +50,4 @@ export default class Store {
     }
 }
 
-// export default Store;
+export default Store;

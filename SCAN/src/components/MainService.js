@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import { Context } from "../index.js";
 import "../stylse/MainServis.css"
 import banner_service from "../images/banner_service.svg"
 
 function MainService() {
+    const {store} = useContext(Context);
 
     return (
         <div className="service">
@@ -15,6 +17,8 @@ function MainService() {
                 <div className="service-note">
                     Комплексный анализ публикаций, получение данных<br />
                      в формате PDF на электронную почту.
+                </div>
+                <div>{ store.isAuth ? <button className="service-but">Запросить данные</button> : <div></div> }
                 </div>
             </div>
 

@@ -1,6 +1,6 @@
 import $api from "../http/index_http.js";
 
-export default class AuthService {
+class AuthService {
     static async login(username, password) {
         return $api.post('/login',{
             login:username,
@@ -12,9 +12,10 @@ export default class AuthService {
             }
         })
     }
+    
     static async logout() {
         console.log('logout');
     }
 }
 
-// export default AuthService;
+export default AuthService;

@@ -1,11 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { observer } from "mobx-react-lite";
 
 import "../stylse/App.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
-import AuthForm from "./AuthForm"
+import AuthForm from "./AuthForm";
 
 function App() {
     return(
@@ -23,4 +24,4 @@ function App() {
     );
 }
 
-export default App;
+export default observer(App);

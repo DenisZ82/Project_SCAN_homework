@@ -8,6 +8,7 @@ import auth_yandex from "../images/auth_yandex.svg";
 import auth_lock from "../images/auth_lock.svg";
 import { Context } from "../index.js";
 import { Link } from "react-router-dom";
+import { observer } from 'mobx-react-lite'
 
 function AuthForm() {
     const [username, setUsername] = useState('');
@@ -52,9 +53,9 @@ function AuthForm() {
                     </form>
 
                     <Link to={"/"}>
-                        <button 
-                            className="login-but" 
-                            onClick={() => store.login(username, password)}>
+                        <button
+                            onClick={() => store.login(username, password)}
+                            className={ username && password ? "login-but-active" : "login-but" }>
                             Войти
                         </button>
                     </Link>
@@ -75,4 +76,4 @@ function AuthForm() {
     )
 }
 
-export default AuthForm;
+export default observer(AuthForm);
