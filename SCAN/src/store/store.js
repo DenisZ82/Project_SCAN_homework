@@ -33,7 +33,7 @@ class Store {
             this.setAuth(true);
         } catch (e) {
             console.log(e.response?.data?.message);
-        } finally {
+            alert(`${e.response?.data?.message} Повторите попытку входа.`);
             this.setLoading(false);
         }
     }

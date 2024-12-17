@@ -1,0 +1,131 @@
+.search-tone {
+    width: 242px;
+    height: 85px;
+    margin: 30px 0px 0px 44px;
+}
+
+.tone-select {
+    position: relative;
+}
+
+.tone-select select {
+    display: block;
+    width: 242px;
+    height: 43px;
+    background: none;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    padding: 0px 0px 0px 22px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    background-image: url('./select_arrow.svg');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 20px;
+}
+
+.tone-select:after {
+    content: '';
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 30%;
+    right: 1rem;
+    z-index: 1;
+    margin-top: -3px;
+}
+
+/* .tone-select select {
+    width: 242px;
+    height: 43px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../images/select_arrow.svg');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 20px;
+    cursor: pointer;
+  }
+
+.tone-select {
+    position: relative;
+    display: inline-block;
+    width: 242px;
+    cursor: pointer;
+}
+
+.tone-select:after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('../images/select_arrow.svg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+} */
+
+/* .tone-select select {
+    padding: 15px;
+    border-radius: 3px;
+    height: 50px;
+    color: black;
+    padding-right: 30px;
+    font-size: 14px;
+    border-color: yellow;
+    position: relative;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: yellow url('../images/select_arrow.svg') no-repeat;
+    background-position: right 5px top 50%;
+} */
+
+/* .tone-select {
+    display: block;
+    width: 242px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    padding: 0px 0px 0px 22px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("../images/select_arrow.svg");
+    background-repeat: no-repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%; 
+    cursor: pointer;
+    font-family: Inter-Regular;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    
+
+} */
+
+/* .tone-select:after {
+    content: '';
+    position: absolute;
+    background-image: url("../images/select_arrow.svg");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+
+} */
+

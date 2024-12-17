@@ -50,7 +50,7 @@
     margin-left: 30px;
 }
 
-.card-1 {
+.card-1-border {
     border: solid #FFB64F;
 }
 
@@ -58,7 +58,7 @@
     background: #FFB64F;
 }
 
-.card-2 {
+.card-2-border {
     border: solid #7CE3E1;
 }
 
@@ -66,7 +66,7 @@
     background: #7CE3E1;
 }
 
-.card-3 {
+.card-3-border {
     border: solid #000000;
 }
 
@@ -118,6 +118,17 @@
     line-height: 16.94px;
     letter-spacing: 0.01em;
     /* text-align: center; */
+}
+
+.tariff-current-none {
+    width: 134px;
+    height: 24px;
+    margin-top: 12px;
+    margin-left: 271px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .tariff-price {

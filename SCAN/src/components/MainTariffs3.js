@@ -8,6 +8,7 @@ import tick from "../images/tick.svg"
 function MainTariffs3() {
 
     return(
+        // <div className="tariff-card card-3 card-3-border">
         <div className="tariff-card card-3">
             <div className="tariff-header">
                 <div>
@@ -17,7 +18,7 @@ function MainTariffs3() {
                 <img src={ tariff_laptop } />
             </div>
             <div>
-                <div className="tariff-current"><p>Текущий тариф</p></div>
+                <div className="tariff-current-none"><p></p></div>
 
                 <div className="tariff-price">
                     <div className="tariff-discount">2 379 ₽</div>

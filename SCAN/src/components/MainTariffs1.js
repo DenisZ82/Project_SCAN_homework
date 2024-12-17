@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { observer } from "mobx-react-lite";
+import { Context } from "../index.js";
 
 import "../stylse/MainTariffCard.css"
-
 import tariff_lamp from "../images/tariff_lamp.svg"
 import tick from "../images/tick.svg"
 
 function MainTariffs1() {
+    const {store} = useContext(Context);
 
     return(
-        <div className="tariff-card card-1">
+        <div className={ !store.isAuth ? "tariff-card card-1" : "tariff-card card-1 card-1-border"}>
             <div className="tariff-header">
                 <div>
                     <div className="tariff-name">Beginner</div>
@@ -16,9 +18,11 @@ function MainTariffs1() {
                 </div>
                 <img src={ tariff_lamp } />
             </div>
-            
+
             <div>
-                <div className="tariff-current"><p>Текущий тариф</p></div>
+                <div className={ !store.isAuth ? "tariff-current-none" : "tariff-current"}>
+                    { !store.isAuth ? <p></p> : <p>Текущий тариф</p> }
+                </div>
 
                 <div className="tariff-price">
                     <div className="tariff-discount">799 ₽</div>
@@ -53,4 +57,4 @@ function MainTariffs1() {
     );
 }
 
-export default MainTariffs1;
+export default observer(MainTariffs1);

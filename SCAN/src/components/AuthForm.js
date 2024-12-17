@@ -1,14 +1,14 @@
 import React, { use, useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { observer } from 'mobx-react-lite'
 
+import { Context } from "../index.js";
 import "../stylse/AuthForm.css"
 import bunner_auth from "../images/bunner_auth.svg";
 import auth_google from "../images/auth_google.svg";
 import auth_facebook from "../images/auth_facebook.svg";
 import auth_yandex from "../images/auth_yandex.svg";
 import auth_lock from "../images/auth_lock.svg";
-import { Context } from "../index.js";
-import { Link } from "react-router-dom";
-import { observer } from 'mobx-react-lite'
 
 function AuthForm() {
     const [username, setUsername] = useState('');
@@ -52,13 +52,16 @@ function AuthForm() {
                         />
                     </form>
 
-                    <Link to={"/"}>
-                        <button
-                            onClick={() => store.login(username, password)}
-                            className={ username && password ? "login-but-active" : "login-but" }>
-                            Войти
-                        </button>
-                    </Link>
+                    { username && password ? 
+                        <Link to={"/"}>
+                            <button
+                                onClick={() => store.login(username, password)}
+                                className={ "login-but-active" }>
+                                Войти
+                            </button>
+                        </Link> : 
+                        <button className={ "login-but" }>Войти</button>
+                    }
 
                     <a className="auth-recover" href="#">Восстановить пароль</a>
 

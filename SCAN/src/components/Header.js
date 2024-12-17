@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../index.js";
 import { Link } from "react-router-dom";
+import { observer } from "mobx-react-lite";
 
 import "../stylse/Header.css";
 import logo_colored from "../images/logo_colored.svg";
@@ -19,14 +20,14 @@ function Header() {
                     <li><a href="#">FAQ</a></li>
                 </ul>
             </nav>
-            { !store.isAuth ?
+            { !store.isAuth ? 
                 <div className="header-reg">
                     <div className="header-register"><a href="#">Зарегистрироваться</a></div>
                     <div className="header-line"></div>
                     <Link to={"/auth"}>
                         <button className="header-but">Войти</button>
                     </Link>
-                </div> :
+                </div> : 
                 <div className="header-logged">
                     <div className="header-limit"></div>
                     <div className="header-user">
@@ -44,4 +45,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default observer(Header);

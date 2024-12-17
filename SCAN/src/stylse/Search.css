@@ -1,0 +1,328 @@
+@font-face {
+    src: url("../stylse/fonts/ferry_black.otf");
+    font-family: ferry_black;
+}
+
+@font-face {
+    src: url("../stylse/fonts/Inter-Regular.otf");
+    font-family: Inter-Regular;
+}
+
+/* The general block */
+
+.search {
+    margin-top: 117px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-left: 60px;
+    margin-right: 82px;
+}
+
+.search-txt {
+    width: 800px;
+    height: 96px;
+    font-family: ferry_black;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 48px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    margin-top: 45px;
+}
+
+.search-note {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.2px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    margin-top: 25px;
+}
+
+.search_document {
+    margin-right: 166px;
+    margin-left: 60px;
+}
+
+.search_folders {
+    margin-right: 22px;
+    margin-bottom: 20px;
+}
+
+.search-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.search-form {
+    width: 872px;
+    height: 543px;
+    margin: 47px 80px 64px 53px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #00000033;
+}
+
+.bunner_search {
+    margin-bottom: 71px;
+}
+
+.form-input p {
+    margin: 0px 0px 20px 0px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.form-checkbox p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.asterisk-err {
+    color: #FF5959;
+}
+
+/* The INN block */
+
+.search-INN {
+    width: 244px;
+    height: 93px;
+    margin: 21px 0px 0px 44px;
+    border-radius: 5px 0px 0px 0px;
+    /* border: 1px; */
+}
+
+.enter-txt {
+    width: 242px;
+    height: 43px;
+    padding: 0px 0px 0px 19px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    box-sizing: border-box;
+    font-family: Inter-Regular;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.enter-txt:focus {
+    width: 242px;
+    height: 43px;
+    outline: 1px solid #C7C7C7;
+    border-color: #C7C7C7;
+    padding: 0px 0px 0px 19px;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    box-sizing: border-box;
+    font-family: Inter-Regular;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.enter-txt-err {
+    width: 242px;
+    height: 43px;
+    padding: 0px 0px 0px 19px;
+    border-radius: 5px;
+    border: 1px solid #FF5959;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    box-sizing: border-box;
+    font-family: Inter-Regular;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: #FF5959;
+}
+
+.enter-txt-err:focus {
+    width: 242px;
+    height: 43px;
+    outline: 1px solid #FF5959;
+    border-color: #FF5959;
+    padding: 0px 0px 0px 19px;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    box-sizing: border-box;
+    font-family: Inter-Regular;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color:#FF5959;
+}
+
+.search-error-txt {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FF5959;
+}
+
+/* The tonality block */
+
+.search-tone {
+    width: 242px;
+    height: 85px;
+    margin: 30px 0px 0px 44px;
+}
+
+.tone-select {
+    position: relative;
+}
+
+.tone-select select {
+    display: block;
+    width: 242px;
+    height: 43px;
+    background: none;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    padding: 0px 0px 0px 22px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    font-family: Inter-Regular;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.tone-select:after {
+    content: url("../images/select_arrow.png");
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 30%;
+    right: 1rem;
+    z-index: 1;
+    margin-top: -3px;
+}
+
+/* .tone-select select {
+    width: 242px;
+    height: 43px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../images/select_arrow.svg');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 20px;
+    cursor: pointer;
+  }
+
+.tone-select {
+    position: relative;
+    display: inline-block;
+    width: 242px;
+    cursor: pointer;
+}
+
+.tone-select:after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('../images/select_arrow.svg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+} */
+
+/* .tone-select select {
+    padding: 15px;
+    border-radius: 3px;
+    height: 50px;
+    color: black;
+    padding-right: 30px;
+    font-size: 14px;
+    border-color: yellow;
+    position: relative;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: yellow url('../images/select_arrow.svg') no-repeat;
+    background-position: right 5px top 50%;
+} */
+
+/* .tone-select {
+    display: block;
+    width: 242px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    padding: 0px 0px 0px 22px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("../images/select_arrow.svg");
+    background-repeat: no-repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%; 
+    cursor: pointer;
+    font-family: Inter-Regular;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    
+
+} */
+
+/* .tone-select:after {
+    content: '';
+    position: absolute;
+    background-image: url("../images/select_arrow.svg");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+
+} */
+
+/* The block of the number of documents */
+
+.search-num-doc {
+    width: 328px;
+    height: 94px;
+    border-radius: 5px;
+    border: 1px;
+    margin: 21px 0px 0px 44px;
+}
+
+.search-num-doc .search-error-txt {
+    margin-right: 86px;
+}
+
+

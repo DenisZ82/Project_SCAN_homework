@@ -7,18 +7,14 @@ import Store from "./store/store.js";
 
 const store = new Store();
 
-export const Context = createContext({
-    store
-});
+export const Context = createContext({ store });
 
 const root = ReactDom.createRoot(document.getElementById("root"));
 
 root.render(
-    <>
+    <Context.Provider value={{store}}>
         <BrowserRouter future={{ v7_startTransition: true, }}>
-            <Context.Provider value={{store}}>
                 <App />
-            </Context.Provider>
         </BrowserRouter>
-    </>
+    </Context.Provider>
 );
