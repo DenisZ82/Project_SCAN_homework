@@ -1,6 +1,7 @@
 import React from "react";
 
-import "../stylse/Search.css"
+import "../stylse/Search.css";
+import arrowSvg from '../images/select_arrow.svg';
 
 function SearchTonality({ tone, setTone }) {
 
@@ -13,6 +14,7 @@ function SearchTonality({ tone, setTone }) {
                     <option>Позитивная</option>
                     <option>Негативная</option>
                 </select>
+                {/* <img src={arrowSvg} alt="Arrow" style={{ position: 'absolute', right: '1rem', top: '30%' }} /> */}
             </div>
         </div>
     )

@@ -5,6 +5,8 @@ import {useEffect , useState} from "react";
 import SearchINN from "./SearchINN";
 import SearchTonality from "./SearchTonality";
 import SearchNumOfDoc from "./SearchNumOfDoc";
+import SearchDates from "./SearchDates";
+import SearchCheckbox from "./SearchCheckbox";
 
 import "../stylse/Search.css"
 import search_document from "../images/search_document.svg"
@@ -15,6 +17,34 @@ function Search() {
     const [companyINN, setCompanyINN] = useState('');
     const [tone, setTone] = useState('Любая');
     const [numOfDoc, setNumOfDoc] = useState('');
+    const [fromDate, setFromDate] = useState('');
+    const [toDate, setToDate] = useState('');
+    const [checkbox, setCheckbox] = useState( {
+            maxCompleteness : false ,
+            businessMentions : false ,
+            mainRole : false ,
+            riskFactorsOnly : false ,
+            includeMarketNews : true ,
+            includeAnnouncements : true ,
+            includeNewsSummaries : true ,
+        });
+
+    const [valid, setValid] = useState(false);
+    
+    useEffect ( () => {
+        const isValid = companyINN && numOfDoc && fromDate && toDate;
+        setValid ( isValid );
+    } , [companyINN , numOfDoc, fromDate, toDate , checkbox] );
+
+    function checkboxChange(event) {
+        const { name, checked } = event.target;
+        setCheckbox( prevState => (
+            {
+                ...prevState,
+                [name]: checked,
+            }) );
+        console.log(checkbox, name, checked);
+    };
 
     return(
         <div className="search">
@@ -34,11 +64,12 @@ function Search() {
                         <SearchINN companyINN={ companyINN } setCompanyINN={ setCompanyINN }/>
                         <SearchTonality tone={ tone } setTone={ setTone }/>
                         <SearchNumOfDoc numOfDoc={ numOfDoc } setNumOfDoc={ setNumOfDoc } />
-
+                        <SearchDates fromDate={ fromDate } setFromDate={ setFromDate } 
+                            toDate={ toDate } setToDate={ setToDate } />
                     </div>
 
                     <div className="form-checkbox">
-
+                        <SearchCheckbox checkbox={checkbox} checkboxChange={checkboxChange}/>
                     </div>
                 </div>
 

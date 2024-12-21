@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import "../stylse/Search.css"
+
 function SearchNumOfDoc({ numOfDoc, setNumOfDoc }) {
 
     const [error , setError] = useState('');
@@ -31,7 +33,7 @@ function SearchNumOfDoc({ numOfDoc, setNumOfDoc }) {
     return (
         <div className="search-num-doc">
             <p className="form-txt">Количество документов в выдаче 
-            <span className={error ? "asterisk-err" : ""}>*</span>
+                <span className={error ? "asterisk-err" : ""}>*</span>
             </p>
             <input 
                 className={ error ? "enter-txt-err" : "enter-txt" }
