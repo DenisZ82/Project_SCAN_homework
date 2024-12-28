@@ -6,7 +6,7 @@
 <hr>
 <h4>Установка библиотек:</h4>
 <ul>
-        <li>В консоли в директории "RecipesDishesApp\Frontend" командой: npm install</li>
+        <li>В консоли в директории "\SCAN" командой: npm install</li>
 </ul>
 <h4>Запуск приложения:</h4>
 <ul>
