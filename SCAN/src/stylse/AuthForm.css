@@ -91,7 +91,6 @@
 .login-form {
     width: 379px;
     height: 174px;
-    width: 379px;
     margin-top: 40px;
 
 }
@@ -227,4 +226,114 @@
     height: 92.06px;
     position: absolute;
     z-index: 1px;
+}
+
+@media (max-width: 768px) {
+    .auth {
+        max-width: 375px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 80px;
+    }
+
+    .auth-block {
+        width: 335px;
+        height: 585px;
+        margin-top: 45px;
+    }
+
+    .auth-explanation {
+        width: 361px;
+        height: 104px;
+        margin-top: 124px;
+        margin-left: 14px;
+        font-size: 22px;
+        line-height: 26.4px;
+    }
+
+    .auth-actions {
+        width: 305px;
+    }
+
+    .bunner-auth {
+        display: none;
+    }
+
+    .auth-form {
+        width: 335px;
+        height: 504px;
+        margin: 75px auto 0px auto;
+    }
+
+    .auth-actions {
+        width: 305px;
+    }
+
+    .auth-login {
+        width: 103px;
+        font-size: 14px;
+        line-height: 16.94px;
+    }
+    
+    .auth-register {
+        width: 182px;
+        font-size: 14px;
+        line-height: 16.94px;
+    }
+
+    .login-form {
+        width: 305px;
+        height: 170px;
+        margin-top: 40px;
+    
+    }
+
+    .login-form p {
+        font-size: 14px;
+        line-height: 16.94px;
+    }
+    
+    .login-form input {
+        width: 305px;
+        height: 43px;
+    }
+
+    .login-form input[type="text"], .login-form input[type="password"] {
+        font-size: 14px;
+        line-height: 16.94px;
+    }
+
+    .login-but-active {
+        width: 305px;
+        height: 59px;
+        font-size: 20px;
+        line-height: 24.2px;
+    }
+
+    .login-but {
+        width: 305px;
+        height: 59px;
+        font-size: 20px;
+        line-height: 24.2px;
+    }
+
+    .auth-socialnet {
+        width: 308px;
+        height: 65px;
+        margin: 30px auto 0px auto;
+    }
+
+    .auth-imglock {
+        width: 75.22px;
+        height: 92.06px;
+        margin-left: 81px;
+        position: absolute;
+        z-index: 1px;
+    }
+
 }

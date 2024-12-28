@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
 
 import MainService from "./MainService";
 import MainSlick from "./MainSlick";

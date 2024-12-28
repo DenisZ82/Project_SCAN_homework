@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {useEffect , useState} from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect , useState } from "react";
 
 import SearchINN from "./SearchINN";
 import SearchTonality from "./SearchTonality";
@@ -20,20 +20,22 @@ function Search() {
     const [fromDate, setFromDate] = useState('');
     const [toDate, setToDate] = useState('');
     const [checkbox, setCheckbox] = useState( {
-            maxCompleteness : false ,
-            businessMentions : false ,
-            mainRole : false ,
-            riskFactorsOnly : false ,
-            includeMarketNews : true ,
-            includeAnnouncements : true ,
-            includeNewsSummaries : true ,
+            maxCompleteness : false,
+            businessMentions : false,
+            mainRole : false,
+            riskFactorsOnly : false,
+            includeMarketNews : true,
+            includeAnnouncements : true,
+            includeNewsSummaries : true,
         });
-
     const [valid, setValid] = useState(false);
-    
-    useEffect ( () => {
+
+    const navigate = useNavigate();
+
+    useEffect( () => {
         const isValid = companyINN && numOfDoc && fromDate && toDate;
-        setValid ( isValid );
+        setValid(isValid);
+        // console.log('useEffect', checkbox);
     } , [companyINN , numOfDoc, fromDate, toDate , checkbox] );
 
     function checkboxChange(event) {
@@ -43,7 +45,64 @@ function Search() {
                 ...prevState,
                 [name]: checked,
             }) );
-        console.log(checkbox, name, checked);
+        // console.log(name, checked);
+        // console.log(checkbox);
+    };
+
+    async function submit(event) {
+        event.preventDefault();
+
+        let apiTonality;
+        switch (tone) {
+            case 'Любая':
+                apiTonality = 'any';
+                break;
+            case 'Позитивная':
+                apiTonality = 'positive';
+                break;
+            case 'Негативная':
+                apiTonality = 'negative';
+                break;
+            default:
+                apiTonality = 'any';
+        }
+
+        if (valid) {
+            const searchRequest = {
+                issueDateInterval : {
+                    startDate : `${fromDate}T00:00:00+03:00` ,
+                    endDate : `${toDate}T23:59:59+03:00`
+                } ,
+                searchContext : {
+                    targetSearchEntitiesContext : {
+                        targetSearchEntities : [{
+                            type : "company" ,
+                            inn : companyINN ,
+                            maxFullness : checkbox.maxCompleteness ,
+                        }] ,
+                        onlyMainRole : checkbox.mainRole ,
+                        tonality : apiTonality ,
+                        onlyWithRiskFactors : checkbox.riskFactorsOnly ,
+                    }
+                } ,
+                attributeFilters : {
+                    excludeTechNews : !checkbox.includeMarketNews ,
+                    excludeAnnouncements : !checkbox.includeAnnouncements ,
+                    excludeDigests : !checkbox.includeNewsSummaries ,
+                } ,
+                limit : Number( numOfDoc ) ,
+                sortType : "sourceInfluence" ,
+                sortDirectionType : "desc" ,
+                intervalType : "month" ,
+                histogramTypes : ["totalDocuments" , "riskFactors"]
+            };
+
+            console.log('POST-запрос:', searchRequest);
+
+            navigate('/results', {state: { searchRequest: searchRequest }});
+        } else {
+            console.log('Форма не валидна, перенаправление не выполнено.');
+        }
     };
 
     return(
@@ -59,7 +118,7 @@ function Search() {
             </div>
 
             <div className="search-block">
-                <div className="search-form">
+                <form className="search-form" onSubmit={ submit }>
                     <div className="form-input">
                         <SearchINN companyINN={ companyINN } setCompanyINN={ setCompanyINN }/>
                         <SearchTonality tone={ tone } setTone={ setTone }/>
@@ -70,8 +129,11 @@ function Search() {
 
                     <div className="form-checkbox">
                         <SearchCheckbox checkbox={checkbox} checkboxChange={checkboxChange}/>
+                            <button className="form-checkbox-but" type="submit" disabled={!valid}>
+                                Поиск</button>
+                            <p className="asterisk-node">* Обязательные к заполнению поля</p>
                     </div>
-                </div>
+                </form>
 
                 <img src={ bunner_search } className="bunner_search"/>
             </div>

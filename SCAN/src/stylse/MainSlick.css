@@ -7,7 +7,6 @@
     display: flex;
     flex-direction: column;
     width: 1346px;
-    height: 1020;
     /* margin-top: 117px; */
     margin-left: auto;
     margin-right: auto;
@@ -108,3 +107,59 @@ div .slick-card {
 button.slick-prev:before {
     content: none;
 } */
+
+@media (max-width: 768px) {
+    .slick {
+        max-width: 375px;
+        height: auto;
+        margin-top: 55px;
+    }
+
+    .slick-heading {
+        width: 274px;
+        height: 68px;
+        font-size: 28px;
+        line-height: 33.6px;
+        margin-left: 14px;
+    }
+
+    .slick-cards {
+        height: 250px;
+        width: 330px;
+        margin-top: 32px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slick-initialized {
+        height: 228px;
+    }
+
+    .slick-card {
+        width: 298px !important;
+        height: 188px;
+    }
+
+    .slick-card p {
+        margin-top: 10px;
+        margin-left: 15px;
+        font-size: 16px;
+    }
+
+    .slick-card img {
+        margin-top: 20px;
+    }
+
+    .for-bunner {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .banner_slick {
+        width: auto;
+        height: 392px;
+        margin-top: 80px;
+    }
+}

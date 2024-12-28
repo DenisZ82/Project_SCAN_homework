@@ -48,8 +48,10 @@ function MainTariffs1() {
                 </div>
             </div>
 
-            <div className="tariff-but">
-                <button>Подробнее</button>
+            <div className="tariff-but-block">
+                <button className={ !store.isAuth ? "tariff-but" : "tariff-account"}>
+                    {!store.isAuth ? "Подробнее" : "Перейти в личный кабинет"}
+                </button>
             </div>
         </div>
 

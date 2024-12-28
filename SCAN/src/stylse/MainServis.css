@@ -65,6 +65,47 @@
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    .service {
+        max-width: 375px;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+        margin-top: 112px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service-txt {
+        width: 361px;
+        height: 136px;
+        font-size: 28px;
+        line-height: 33.6px;
+        margin: 20px 0px 0px 14px;
+    }
+
+    .service-note {
+        width: 327px;
+        height: 66px;
+        font-size: 18px;
+        line-height: 21.78px;
+        margin: 20px 0px 0px 14px;
+    }
+
+    .service-banner {
+        width: 347px;
+        height: 342px;
+        margin-top: 24px;
+    }
+
+    .service-but {
+        width: 335px;
+        height: 59px;
+        margin: 32px 0px 0px 14px;
+    }
+}
+
 
 
 

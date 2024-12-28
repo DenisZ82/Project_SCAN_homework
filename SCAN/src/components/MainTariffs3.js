@@ -44,8 +44,8 @@ function MainTariffs3() {
                 </div>
             </div>
 
-            <div className="tariff-but">
-                <button>Подробнее</button>
+            <div className="tariff-but-block">
+                <button className="tariff-but">Подробнее</button>
             </div>
         </div>
 

@@ -6,7 +6,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "bundle.js",
-        publicPath: '/'
+        publicPath: '/',
+        assetModuleFilename: "assets/[name]-[contenthash][ext]",
     },
     devServer: {
         port: 3000,
@@ -28,6 +29,14 @@ module.exports = {
             {
                 test: /\.svg$/,
                 use: 'file-loader'
+            },
+            // {
+            //     test: /\.png$/,
+            //     use: 'file-loader'
+            // },
+            {
+                test: /\.(png|jpg|jpeg|gif|woff2|mp3)$/i,
+                type: "asset/resource",
             }
         ]
     },

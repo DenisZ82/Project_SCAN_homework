@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Main from "./Main";
 import AuthForm from "./AuthForm";
 import Search from "./Search";
+import ResultsPage from "./ResultsPage.js";
 
 import { Context } from "../index.js";
 import "../stylse/App.css";
@@ -23,7 +24,11 @@ function App() {
                     <Route path="/" element={<Main />} />
                     <Route path="/auth" element={<AuthForm />} />
                     { store.isAuth ? 
-                        <Route path="/search" element={<Search />}/> : 
+                        <Route path="/search" element={<Search />} /> : 
+                        <Route path="/" element={<Main />} />
+                    }
+                    { store.isAuth ? 
+                        <Route path="/results" element={<ResultsPage />} /> : 
                         <Route path="/" element={<Main />} />
                     }
                 </Routes>

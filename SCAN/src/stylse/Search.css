@@ -8,7 +8,7 @@
     font-family: Inter-Regular;
 }
 
-/* The general block */
+/* Для компонента Search */
 
 .search {
     margin-top: 117px;
@@ -90,7 +90,7 @@
     color: #FF5959;
 }
 
-/* The INN block */
+/* Для компонента SearchINN */
 
 .search-INN {
     width: 244px;
@@ -175,7 +175,7 @@
     color: #FF5959;
 }
 
-/* The tonality block */
+/* Для компонента SearchTonality */
 
 .search-tone {
     width: 242px;
@@ -219,7 +219,7 @@
     margin-top: -3px;
 }
 
-/* The block of the number of documents */
+/* Для компонента SearchNumOfDoc */
 
 .search-num-doc {
     width: 328px;
@@ -233,13 +233,13 @@
     margin-right: 86px;
 }
 
+/* Для компонента SearchDates */
+
 .search-dates {
     width: 372px;
     height: 94px;
     margin: 30px 0px 0px 44px;
 }
-
-/* Dates selection block */
 
 .dates-input {
     display: flex;
@@ -256,109 +256,264 @@
     height: 43px;
 }
 
-/* The Checkbox */
+/* Для компонента SearchCheckbox */
 
 .form-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.chckbox-list {
     width: 406px;
     height: 244px;
     margin-top: 36px;
     margin-right: 39px;
 }
 
-.form-checkbox label {
+.container p {
     font-size: 18px;
     font-weight: 400;
     line-height: 21.78px;
     letter-spacing: 0.03em;
     text-align: left;
+    margin: 0px 0px 15px 0px;
+}
+
+.p-turn-on {
+    opacity: 40%;
 }
 
 .container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  user-select: none;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
 }
 
 .container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    opacity: 40%;
 }
 
 .checkmark-on {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
 }
 
 .container:hover input ~ .checkmark {
-  background-color: #ccc;
+    background-color: #ccc;
 }
 
-/* .container input:checked ~ .checkmark {
-  background-color: #2196F3;
-} */
-
-.checkmark:after {
+/* .checkmark:after {
   content: url("../images/form_mark.png");
-  /* width: 20px;
-  height: 20px; */
   position: absolute;
   display: none;
-  /* border: 2px solid black; */
-}
-
-.checkmark-on:after {
-    content: url("../images/form_mark.png");
-    /* width: 20px;
-    height: 20px; */
-    position: absolute;
-    display: none;
-    /* border: 2px solid black; */
-  }
-
-/* .checkmark:after .checkmark {
-    border: 2px solid black;
 } */
 
-.container input:checked ~ .checkmark:after {
-  display: block;
+.form-checkbox-but {
+    width: 305px;
+    height: 59px;
+    margin-top: 145px;
+    margin-right: 39px;
+    border-radius: 5px;
+    border: none;
+    background: #5970FF;
+    color: #FFFFFF;
+    font-family: Inter-Regular;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 26.63px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    cursor: pointer;
 }
 
-/* .container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-} */
+.asterisk-node {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.03em;
+    color: #949494;
+    margin: 10px 85px 0px 0px;
+}
+
+.form-checkbox-but:disabled {
+    opacity: 50%;
+}
+
+@media (max-width: 768px) {
+    .search {
+        max-width: 375px;
+        margin-top: 68px;
+    }
+
+    .search-title {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search-txt {
+        width: 361px;
+        height: 136px;
+        font-size: 28px;
+        line-height: 33.6px;
+        margin-left: 14px;
+    }
+    
+    .search-note {
+        width: 297px;
+        font-size: 18px;
+        line-height: 21.8px;
+        margin-top: 19px;
+        margin-left: 14px;
+    }
+
+    .search_document {
+        width: 58.24px;
+        height: 71.12px;
+        margin: 145px 0px 0px 291px;
+        position: absolute;
+    }
+    
+    .search_folders {
+        display: none;
+    }
+
+    .search-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .search-form {
+        width: 375px;
+        height: 688px;
+        margin: 21px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .search-INN {
+        width: 335px;
+        margin: 21px 26px 0px 14px;
+    }
+
+    .enter-txt {
+        width: 335px;
+    }
+    
+    .enter-txt:focus {
+        width: 335px;
+    }
+
+    .enter-txt-err {
+        width: 335px;
+    }
+    
+    .enter-txt-err:focus {
+        width: 335px;
+    }
+
+    .search-tone {
+        width: 335px;
+        margin: 30px 26px 0px 14px;
+    }
+
+    .tone-select select {
+        display: block;
+        width: 335px;
+    }
+
+    .search-num-doc {
+        width: 335px;
+        margin: 21px 0px 0px 14px;
+    }
 
 
+    .search-num-doc .search-error-txt {
+        margin-right: 0px;
+    }
+
+    .search-dates {
+        width: 335px;
+        height: 157px;
+        margin: 21px 0px 0px 14px;
+    }
+
+    .dates-input {
+        height: 106px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .dates-input input {
+        width: 335px;
+    }
+    
+    .dates-input input:focus {
+        width: 335px;
+    }
+
+    .form-checkbox {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .chckbox-list {
+        display: none;
+    }
+
+    .form-checkbox-but {
+        width: 335px;
+        margin: 40px 0px 0px 14px;
+        font-size: 20px;
+        line-height: 24.2px;
+    }
+
+    .asterisk-node {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.94px;
+        letter-spacing: 0.03em;
+        color: #949494;
+        margin: 10px 0px 0px 14px;
+    }
+
+    .bunner_search {
+        width: 375px;
+        margin: 24px 0px 24px 0px;
+    }
+}
